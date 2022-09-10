@@ -1,3 +1,4 @@
+import React from "react";
 import { Box } from "@mui/material";
 import Button from "./components/button";
 import ButtonTexture from "../../img/button.png";

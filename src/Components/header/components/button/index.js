@@ -1,3 +1,4 @@
+import React from "react";
 import { Box, Link } from "@mui/material";
 import ButtonLine from "../../../../img/light_line.png";
 import { useState } from "react";
@@ -27,7 +28,6 @@ const Button = ({ title, width, last, Logo, link }) => {
             color: "#47fff4",
           },
         }}
-        onHover={() => setHover(true)}
       >
         <Box
           sx={{

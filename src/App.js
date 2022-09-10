@@ -1,4 +1,5 @@
 import "./App.css";
+import React, { useEffect } from "react";
 import { Box, Typography, Link } from "@mui/material";
 import Header from "./Components/header";
 import Logo from "./img/logo.png";
@@ -7,8 +8,18 @@ import DiscordButton from "./img/discord_button.png";
 import DiscordLogo from "./img/discord_logo.png";
 import SolanaLogo from "./img/solana_logo.png";
 import Smoke from "./img/smoke.png";
+import WebFont from "webfontloader";
 
 function App() {
+  useEffect(() => {
+    console.log(1);
+    WebFont.load({
+      custom: {
+        families: "Inter",
+      },
+    });
+  }, []);
+
   return (
     <Box sx={{ position: "relative" }}>
       <Box
