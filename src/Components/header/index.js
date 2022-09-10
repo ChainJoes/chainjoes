@@ -61,7 +61,7 @@ const Header = () => {
 
   const handleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    document.body.classList.toggle("mobileMenu");
+    document.getElementById('root').classList.toggle("mobileMenu");
   };
 
   return (
