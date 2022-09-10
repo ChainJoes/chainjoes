@@ -24,7 +24,6 @@ const preload = async () => {
     CloseButton,
     SmokeMobile,
   ];
-    console.log(1, imgs);
 
   const loaded = await cacheImages(imgs);
 
@@ -37,7 +36,7 @@ const cacheImages = async (srcArray) => {
       const img = new Image();
 
       img.src = src;
-      img.onload = res();
+      img.onloadeddata = res();
       img.onerror = rej();
     });
   });

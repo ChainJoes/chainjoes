@@ -11,6 +11,7 @@ import DiscordLogo from "./img/discord_logo.png";
 import SolanaLogo from "./img/solana_logo.png";
 import Smoke from "./img/smoke.png";
 
+import PreloadImage from 'react-preload-image'
 import preload from "./preloadImages";
 
 function App() {
@@ -38,16 +39,17 @@ function App() {
             flexDirection: "column",
           }}
         >
-          <Box
-            sx={{
+          <PreloadImage
+            style={{
               width: "100%",
               height: "100%",
-              backgroundImage: `url(${Smoke})`,
-              backgroundRepeat: "no-repeat",
+              // backgroundImage: `url(${Smoke})`,
+              // backgroundRepeat: "no-repeat",
               position: "absolute",
-              backgroundSize: "cover",
+              // backgroundSize: "cover",
               zIndex: -1,
             }}
+            src={Smoke}
           />
           <Header />
           <Box sx={{ flexGrow: 1 }}>

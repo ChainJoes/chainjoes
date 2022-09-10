@@ -82,9 +82,14 @@
       crossorigin
     />
     <link href="%PUBLIC_URL%/index.css" rel="stylesheet" />
+    <script>
+      window.addEventListener("load", function(event) {
+        document.getElementById('root').classList.toggle('disabled');
+      });
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root" class="disabled"></div>
   </body>
 </html>
