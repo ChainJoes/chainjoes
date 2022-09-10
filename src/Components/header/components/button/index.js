@@ -1,10 +1,12 @@
 import React from "react";
-import { Box, Link } from "@mui/material";
+import { Box, Link, useMediaQuery } from "@mui/material";
 import ButtonLine from "../../../../img/light_line.png";
 import { useState } from "react";
 
-const Button = ({ title, width, last, Logo, link }) => {
+const Button = ({ title, count, last, Logo, link }) => {
   const [hover, setHover] = useState(false);
+
+  const smallDesktop = useMediaQuery("(min-width: 930px)");
 
   return (
     <Link
@@ -31,21 +33,18 @@ const Button = ({ title, width, last, Logo, link }) => {
       >
         <Box
           sx={{
-            width: width,
+            width: `calc(100vw/${count})`,
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             height: 80,
-
-            // ":hover": {
-            //   boxShadow: "inset 0px 0px 2px #47FFF4",
-            //   filter: "drop-shadow(0px 0px 7px rgba(71, 255, 189, 0.55))",
-            // },
           }}
         >
-          <Box sx={{ paddingRight: "14px" }}>
-            <Logo color={hover ? "#47FFF4" : "#fff"} />
-          </Box>
+          {smallDesktop && (
+            <Box sx={{ paddingRight: "14px" }}>
+              <Logo color={hover ? "#47FFF4" : "#fff"} />
+            </Box>
+          )}
           <Box sx={{}}>{title}</Box>
         </Box>
         {!last && (

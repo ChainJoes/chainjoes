@@ -1,15 +1,18 @@
 import "./App.css";
 import React from "react";
-import { Box, Typography, Link } from "@mui/material";
+import { Box, Typography, Link, useMediaQuery } from "@mui/material";
 import Header from "./Components/header";
 import Logo from "./img/logo.png";
 import Scratches from "./img/scratches.png";
+import ScratchesMobile from "./img/scratches_mobile.png";
 import DiscordButton from "./img/discord_button.png";
 import DiscordLogo from "./img/discord_logo.png";
 import SolanaLogo from "./img/solana_logo.png";
 import Smoke from "./img/smoke.png";
 
 function App() {
+  const tablet = useMediaQuery("(min-width: 768px)");
+
   return (
     <Box
       sx={{
@@ -42,16 +45,16 @@ function App() {
         >
           <Box
             sx={{
-              width: 348,
-              height: 259,
+              width: tablet ? 348 : 200,
+              height: tablet ? 259 : 150,
               backgroundImage: `url(${Logo})`,
               backgroundSize: "cover",
             }}
           />
           <Box
             sx={{
-              width: 264,
-              height: 264,
+              width: tablet ? 264 : 98,
+              height: tablet ? 264 : 99,
               backgroundColor: "#1ED4ED",
               filter: "blur(299px)",
               position: "absolute",
@@ -63,7 +66,7 @@ function App() {
         </Box>
         <Box
           sx={{
-            width: 320,
+            width: tablet ? 320 : 240,
             textAlign: "center",
             marginTop: "19px",
             marginLeft: "auto",
@@ -73,7 +76,7 @@ function App() {
         >
           <Typography
             color="#BDBDBD"
-            fontSize={18}
+            fontSize={tablet ? 18 : 12}
             fontFamily="Inter"
             fontWeight={300}
           >
@@ -91,17 +94,25 @@ function App() {
             variant="h1"
             fontFamily="Furore"
             color="#FFFFFF"
-            fontSize="104px"
+            fontSize={tablet ? 104 : 50}
             style={{ position: "relative" }}
           >
             Coming{" "}
-            <Box style={{ display: "inline", color: "#00FFB7" }}>soon</Box>
+            <Box
+              style={{
+                display: tablet && "inline",
+                color: "#00FFB7",
+                textAlign: !tablet && "center",
+              }}
+            >
+              soon
+            </Box>
             <Box
               sx={{
                 width: "100%",
                 height: "100%",
                 position: "absolute",
-                backgroundImage: `url(${Scratches})`,
+                backgroundImage: `url(${tablet ? Scratches : ScratchesMobile})`,
                 top: "20px",
               }}
             />
@@ -118,14 +129,15 @@ function App() {
         >
           <Box
             sx={{
-              width: 353,
+              width: tablet ? 353 : 259,
               backgroundImage: `url(${DiscordButton})`,
+              backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
-              height: 75,
+              height: tablet ? 75 : 55,
               transition: "all 0.2s ease-in-out",
               position: "relative",
               cursor: "pointer",
-              ":hover": {
+              ":hover": tablet && {
                 width: 365,
                 height: 78,
               },
@@ -133,21 +145,23 @@ function App() {
           >
             <Box
               sx={{
-                width: 35,
-                height: 26,
+                width: tablet ? 35 : 24,
+                height: tablet ? 26 : 17,
                 backgroundImage: `url(${DiscordLogo})`,
+                backgroundSize: "cover",
                 position: "absolute",
-                top: "28px",
-                left: "29px",
+                top: tablet ? "28px" : "23px",
+                left: tablet ? "29px" : "22px",
               }}
             />
             <Typography
               style={{
                 fontFamily: "Inter",
-                fontSize: "20px",
+                fontStyle: "italic",
+                fontSize: tablet ? "20px" : "16px",
                 fontWeight: 500,
-                paddingLeft: "98px",
-                paddingTop: "26px",
+                paddingLeft: tablet ? "98px" : "64px",
+                paddingTop: tablet ? "26px" : "20px",
                 textTransform: "uppercase",
               }}
             >
@@ -159,14 +173,22 @@ function App() {
       <Box
         sx={{
           marginTop: "35px",
-          marginLeft: "38px",
+          marginLeft: tablet && "38px",
           marginBottom: "38px",
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: tablet ? "space-between" : "center",
           flexGrow: 0,
         }}
       >
-        <Box>
+        <Box
+          sx={
+            !tablet && {
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }
+          }
+        >
           <Typography
             fontFamily="Inter"
             fontSize="18px"
@@ -177,25 +199,29 @@ function App() {
           </Typography>
           <Box
             sx={{
-              width: 220,
-              height: 26,
+              width: tablet ? 226 : 123,
+              height: tablet ? 26 : 14,
+              backgroundSize: "cover",
               backgroundImage: `url(${SolanaLogo})`,
-              marginTop: "10px",
+              marginTop: tablet && "10px",
+              marginLeft: "5px",
             }}
           />
         </Box>
-        <Link href="mailto:info@chainjoes.com" underline="none">
-          <Box sx={{ paddingTop: "39px", paddingRight: "40px" }}>
-            <Typography
-              fontFamily="Inter"
-              fontSize="18px"
-              fontWeight={300}
-              color="#CECECE"
-            >
-              info@chainjoes.com
-            </Typography>
-          </Box>
-        </Link>
+        {tablet && (
+          <Link href="mailto:info@chainjoes.com" underline="none">
+            <Box sx={{ paddingTop: "39px", paddingRight: "40px" }}>
+              <Typography
+                fontFamily="Inter"
+                fontSize="18px"
+                fontWeight={300}
+                color="#CECECE"
+              >
+                info@chainjoes.com
+              </Typography>
+            </Box>
+          </Link>
+        )}
       </Box>
     </Box>
   );
