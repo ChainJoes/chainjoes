@@ -22,4 +22,6 @@ body {
 
 .mobileMenu {
   overflow: hidden;
+  touch-action: none;
+  -ms-touch-action: none;
 }
