@@ -61,7 +61,7 @@ const Header = () => {
 
   const handleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    document.getElementById('root').classList.toggle("mobileMenu");
+    document.getElementById("root").classList.toggle("mobileMenu");
   };
 
   return (
@@ -144,34 +144,36 @@ const Header = () => {
                     }}
                   >
                     {buttons.map((item, index) => (
-                      <Box
-                        key={index}
-                        sx={{
-                          height: "26px",
-                          marginBottom: "58px",
-                          paddingLeft: "calc(50vw/2.5)",
-                        }}
-                      >
-                        <Typography
-                          fontSize="14px"
-                          fontFamily="Inter"
-                          fontWeight="300"
-                          color="#FFFFFF"
-                          style={{
-                            position: "relative",
+                      <Link href={item.link} target="_blank" underline="none">
+                        <Box
+                          key={index}
+                          sx={{
+                            height: "26px",
+                            marginBottom: "58px",
+                            paddingLeft: "calc(50vw/2.5)",
                           }}
                         >
-                          <Box
-                            sx={{
-                              position: "absolute",
-                              left: -item.iconWidth - 20,
+                          <Typography
+                            fontSize="14px"
+                            fontFamily="Inter"
+                            fontWeight="300"
+                            color="#FFFFFF"
+                            style={{
+                              position: "relative",
                             }}
                           >
-                            <item.logo color="#00FFB7" />
-                          </Box>
-                          {item.title}
-                        </Typography>
-                      </Box>
+                            <Box
+                              sx={{
+                                position: "absolute",
+                                left: -item.iconWidth - 20,
+                              }}
+                            >
+                              <item.logo color="#00FFB7" />
+                            </Box>
+                            {item.title}
+                          </Typography>
+                        </Box>
+                      </Link>
                     ))}
                   </Box>
                 </Box>
