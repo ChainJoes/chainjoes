@@ -2,6 +2,9 @@ import React from "react";
 import { Box, Typography, useMediaQuery, Link } from "@mui/material";
 import Button from "./components/button";
 import ButtonTexture from "../../img/button.png";
+import MenuButton from "../../img/menu2.png";
+import CloseButton from "../../img/close2.png";
+import Smoke from "../../img/smoke_mobile.png";
 import {
   DsLogo,
   FbLogo,
@@ -10,9 +13,6 @@ import {
   TgLogo,
   TwitterLogo,
 } from "../icons";
-import MenuButton from "../../img/menu2.png";
-import CloseButton from "../../img/close2.png";
-import Smoke from "../../img/smoke_mobile.png";
 import { useState } from "react";
 
 const Header = () => {
