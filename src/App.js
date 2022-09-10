@@ -127,47 +127,64 @@ function App() {
             height: 80,
           }}
         >
-          <Box
-            sx={{
-              width: tablet ? 353 : 259,
-              backgroundImage: `url(${DiscordButton})`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              height: tablet ? 75 : 55,
-              transition: "all 0.2s ease-in-out",
-              position: "relative",
-              cursor: "pointer",
-              ":hover": tablet && {
-                width: 365,
-                height: 78,
-              },
-            }}
+          <Link
+            href="https://discord.gg/Pqnnt8Ag"
+            target="_blank"
+            underline="none"
           >
             <Box
               sx={{
-                width: tablet ? 35 : 24,
-                height: tablet ? 26 : 17,
-                backgroundImage: `url(${DiscordLogo})`,
+                width: tablet ? 353 : 259,
+                backgroundImage: `url(${DiscordButton})`,
                 backgroundSize: "cover",
-                position: "absolute",
-                top: tablet ? "28px" : "23px",
-                left: tablet ? "29px" : "22px",
-              }}
-            />
-            <Typography
-              style={{
-                fontFamily: "Inter",
-                fontStyle: "italic",
-                fontSize: tablet ? "20px" : "16px",
-                fontWeight: 500,
-                paddingLeft: tablet ? "98px" : "64px",
-                paddingTop: tablet ? "26px" : "20px",
-                textTransform: "uppercase",
+                backgroundRepeat: "no-repeat",
+                height: tablet ? 75 : 55,
+                transition: "all 0.2s ease-in-out",
+                position: "relative",
+                cursor: "pointer",
+                ":hover": tablet && {
+                  width: 365,
+                  height: 78,
+                  "& p": {
+                    paddingTop: "28px !important",
+                    paddingLeft: "105px !important",
+                  },
+                  "& div": {
+                    top: "30px",
+                    left: "31px",
+                  },
+                },
               }}
             >
-              Join discord server
-            </Typography>
-          </Box>
+              <Box
+                sx={{
+                  width: tablet ? 35 : 24,
+                  height: tablet ? 26 : 17,
+                  backgroundImage: `url(${DiscordLogo})`,
+                  backgroundSize: "cover",
+                  position: "absolute",
+                  top: tablet ? "28px" : "23px",
+                  left: tablet ? "29px" : "22px",
+                  transition: 'all 0.2s ease-in-out'
+                }}
+              />
+              <Typography
+                style={{
+                  fontFamily: "Inter",
+                  fontStyle: "italic",
+                  fontSize: tablet ? "20px" : "16px",
+                  fontWeight: 500,
+                  paddingLeft: tablet ? "98px" : "64px",
+                  paddingTop: tablet ? "26px" : "20px",
+                  textTransform: "uppercase",
+                  color: "#000000",
+                  transition: 'all 0.2s ease-in-out'
+                }}
+              >
+                Join discord server
+              </Typography>
+            </Box>
+          </Link>
         </Box>
       </Box>
       <Box
