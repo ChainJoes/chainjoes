@@ -4,8 +4,6 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "dev": "webpack-dev-server --config webpack.dev.config.js --open",
-    "web-build": "webpack --config webpack.production.config.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
