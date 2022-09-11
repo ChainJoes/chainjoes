@@ -56,7 +56,7 @@ function App() {
                 className="logo"
                 sx={{
                   width: tablet ? 373 : 223,
-                  height: tablet ? 156 : 90,
+                  height: tablet ? 156 : 93,
                   backgroundSize: "cover",
                 }}
               />
