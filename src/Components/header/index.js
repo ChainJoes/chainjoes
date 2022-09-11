@@ -1,10 +1,6 @@
 import React from "react";
 import { Box, Typography, useMediaQuery, Link } from "@mui/material";
 import Button from "./components/button";
-import ButtonTexture from "../../img/button.png";
-import MenuButton from "../../img/menu2.png";
-import CloseButton from "../../img/close2.png";
-import Smoke from "../../img/smoke_mobile.png";
 import {
   DsLogo,
   FbLogo,
@@ -67,14 +63,15 @@ const Header = () => {
   return (
     <Box>
       <Box
+        className="menuButton"
         sx={{
           display: "flex",
-          background: `url(${ButtonTexture}), linear-gradient(180deg, rgba(56, 69, 78, 0.24) 0%, #121212 100%), #121212`,
           backgroundBlendMode: "overlay, normal, normal",
           boxShadow: "inset 0px -0.5px 1px rgba(116, 116, 116, 0.24);",
           backgroundSize: "cover",
           height: 80,
           justifyContent: !tablet && "end",
+          WebkitJustifyContent: !tablet && "flex-end",
           alignItems: !tablet && "center",
         }}
       >
@@ -92,10 +89,8 @@ const Header = () => {
         ) : (
           <Box>
             <Box
+              className={isMenuOpen ? "closeMenu" : "openMenu"}
               sx={{
-                backgroundImage: `url(${
-                  isMenuOpen ? CloseButton : MenuButton
-                })`,
                 width: 122,
                 height: 66,
                 backgroundSize: "cover",
@@ -106,6 +101,7 @@ const Header = () => {
             ></Box>
             {isMenuOpen && (
               <Box
+                className="smokeMobile"
                 sx={{
                   position: "fixed",
                   top: "80px",
@@ -118,7 +114,6 @@ const Header = () => {
                   backgroundColor: "#0D0D0D",
                   display: "flex",
                   flexDirection: "column",
-                  backgroundImage: `url(${Smoke})`,
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",
                 }}

@@ -3,15 +3,6 @@ import "normalize.css";
 import React, { useState, useEffect } from "react";
 import { Box, Typography, Link, useMediaQuery } from "@mui/material";
 import Header from "./Components/header";
-import Logo from "./img/logo.png";
-import Scratches from "./img/scratches.png";
-import ScratchesMobile from "./img/scratches_mobile.png";
-import DiscordButton from "./img/discord_button.png";
-import DiscordLogo from "./img/discord_logo.png";
-import SolanaLogo from "./img/solana_logo.png";
-import Smoke from "./img/smoke.png";
-
-import PreloadImage from 'react-preload-image'
 import preload from "./preloadImages";
 
 function App() {
@@ -39,17 +30,16 @@ function App() {
             flexDirection: "column",
           }}
         >
-          <PreloadImage
+          <Box
+            className="smoke"
             style={{
               width: "100%",
               height: "100%",
-              // backgroundImage: `url(${Smoke})`,
-              // backgroundRepeat: "no-repeat",
+              backgroundRepeat: "no-repeat",
               position: "absolute",
-              // backgroundSize: "cover",
+              backgroundSize: "cover",
               zIndex: -1,
             }}
-            src={Smoke}
           />
           <Header />
           <Box sx={{ flexGrow: 1 }}>
@@ -62,10 +52,10 @@ function App() {
               }}
             >
               <Box
+                className="logo"
                 sx={{
                   width: tablet ? 348 : 200,
                   height: tablet ? 259 : 150,
-                  backgroundImage: `url(${Logo})`,
                   backgroundSize: "cover",
                 }}
               />
@@ -131,11 +121,9 @@ function App() {
                     width: "100%",
                     height: tablet ? "84px" : "100%",
                     position: "absolute",
-                    backgroundImage: `url(${
-                      tablet ? Scratches : ScratchesMobile
-                    })`,
                     top: "20px",
                   }}
+                  className={tablet ? "scratchesDesktop" : "scratchesMobile"}
                 />
               </Typography>
             </Box>
@@ -154,9 +142,9 @@ function App() {
                 underline="none"
               >
                 <Box
+                  className="discordButton"
                   sx={{
                     width: tablet ? 353 : 259,
-                    backgroundImage: `url(${DiscordButton})`,
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
                     height: tablet ? 75 : 55,
@@ -178,10 +166,10 @@ function App() {
                   }}
                 >
                   <Box
+                    className="discordLogo"
                     sx={{
                       width: tablet ? 35 : 24,
                       height: tablet ? 26 : 17,
-                      backgroundImage: `url(${DiscordLogo})`,
                       backgroundSize: "cover",
                       position: "absolute",
                       top: tablet ? "28px" : "23px",
@@ -220,11 +208,15 @@ function App() {
           >
             <Box
               sx={
-                !tablet && {
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }
+                !tablet
+                  ? {
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }
+                  : {
+                      height: "69px",
+                    }
               }
             >
               <Typography
@@ -236,11 +228,11 @@ function App() {
                 Powered by
               </Typography>
               <Box
+                className="solanaLogo"
                 sx={{
                   width: tablet ? 226 : 123,
                   height: tablet ? 26 : 14,
                   backgroundSize: "cover",
-                  backgroundImage: `url(${SolanaLogo})`,
                   marginTop: tablet && "10px",
                   marginLeft: "5px",
                 }}
@@ -248,12 +240,22 @@ function App() {
             </Box>
             {tablet && (
               <Link href="mailto:info@chainjoes.com" underline="none">
-                <Box sx={{ paddingTop: "39px", paddingRight: "40px" }}>
+                <Box
+                  sx={{
+                    paddingTop: "39px",
+                    paddingRight: "40px",
+                    transition: "all 0.2s ease-in-out",
+                    fontSize: "18px ",
+                    ":hover": {
+                      fontSize: "20px",
+                    },
+                  }}
+                >
                   <Typography
                     fontFamily="Inter"
-                    fontSize="18px"
                     fontWeight={300}
                     color="#CECECE"
+                    fontSize="inherit"
                   >
                     info@chainjoes.com
                   </Typography>

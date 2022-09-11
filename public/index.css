@@ -61,3 +61,51 @@
 .disabled {
   display: none;
 }
+
+.scratchesDesktop {
+  background-image: url("./imgs/scratches.png");
+}
+
+.scratchesMobile {
+  background-image: url("./imgs/scratches_mobile.png");
+}
+
+.discordButton {
+  background-image: url("./imgs/discord_button.png");
+}
+
+.discordLogo {
+  background-image: url("./imgs/discord_logo.png");
+}
+.solanaLogo {
+  background-image: url("./imgs/solana_logo.png");
+}
+
+.logo {
+  background-image: url("./imgs/logo.png");
+}
+
+.smoke {
+  background-image: url("./imgs/smoke.png");
+}
+
+.smokeMobile {
+  background-image: url("./imgs/smoke_mobile.png");
+}
+
+.buttonLine {
+  background-image: url("./imgs/light_line.png");
+}
+
+.menuButton {
+  background: url("./imgs/button.png"),
+    linear-gradient(180deg, rgba(56, 69, 78, 0.24) 0%, #121212 100%), #121212;
+}
+
+.closeMenu {
+  background-image: url("./imgs/close2.png");
+}
+
+.openMenu {
+  background-image: url("./imgs/menu2.png");
+}

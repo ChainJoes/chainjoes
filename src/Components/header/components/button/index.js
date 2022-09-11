@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Link, useMediaQuery } from "@mui/material";
-import ButtonLine from "../../../../img/light_line.png";
 import { useState } from "react";
 
 const Button = ({ title, count, last, Logo, link }) => {
@@ -49,8 +48,8 @@ const Button = ({ title, count, last, Logo, link }) => {
         </Box>
         {!last && (
           <Box
+            className="buttonLine"
             sx={{
-              backgroundImage: `url(${ButtonLine})`,
               width: 122,
               height: 80,
               position: "absolute",
