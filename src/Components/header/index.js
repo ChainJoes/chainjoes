@@ -56,9 +56,13 @@ const Header = () => {
   ];
 
   const handleMenu = () => {
+    const html = document.documentElement;
     setIsMenuOpen(!isMenuOpen);
     document.getElementById("root").classList.toggle("mobileMenu");
-    document.documentElement.style.overflow = "hidden";
+    console.log(html.style.overflow === "hidden");
+    html.style.overflow === "hidden"
+      ? (html.style.overflow = "auto")
+      : (html.style.overflow = "hidden");
   };
 
   return (
