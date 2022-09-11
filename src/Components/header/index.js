@@ -94,7 +94,7 @@ const Header = () => {
         ) : (
           <Box>
             <Box
-              className={isMenuOpen ? "closeMenu" : "openMenu"}
+              className={isMenuOpen ? "closeMenu" : "closeMenu disabledMobile"}
               sx={{
                 width: 122,
                 height: 66,
@@ -105,9 +105,20 @@ const Header = () => {
               }}
               onClick={handleMenu}
             ></Box>
-            {isMenuOpen && (
+            <Box
+              className={isMenuOpen ? "openMenu disabledMobile" : "openMenu"}
+              sx={{
+                width: 122,
+                height: 66,
+                backgroundSize: "cover",
+                marginRight: "20px",
+                // transition: "0.1s background-image",
+                // WebkitTransition: '0.1s background-image',
+              }}
+              onClick={handleMenu}
+            ></Box>
               <Box
-                className="smokeMobile"
+                className={!isMenuOpen ?  "smokeMobile disabledMobile": "smokeMobile"}
                 sx={{
                   position: "fixed",
                   top: "80px",
@@ -146,9 +157,13 @@ const Header = () => {
                     }}
                   >
                     {buttons.map((item, index) => (
-                      <Link href={item.link} target="_blank" underline="none">
+                      <Link
+                        key={index}
+                        href={item.link}
+                        target="_blank"
+                        underline="none"
+                      >
                         <Box
-                          key={index}
                           sx={{
                             height: "26px",
                             marginBottom: "58px",
@@ -156,6 +171,8 @@ const Header = () => {
                           }}
                         >
                           <Typography
+                            component={"span"}
+                            variant={"body2"}
                             fontSize="14px"
                             fontFamily="Inter"
                             fontWeight="300"
@@ -196,13 +213,13 @@ const Header = () => {
                       fontWeight={400}
                       fontSize="22px"
                       color="#CECECE"
+                      className={!isMenuOpen && "disabledMobile"}
                     >
                       info@chainjoes.com
                     </Typography>
                   </Box>
                 </Link>
               </Box>
-            )}
           </Box>
         )}
       </Box>

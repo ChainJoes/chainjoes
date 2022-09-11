@@ -14,6 +14,11 @@
     <link href="%PUBLIC_URL%/color.css" rel="stylesheet" />
     <link rel="preload" href="%PUBLIC_URL%/index.css" as="style" />
     <link href="%PUBLIC_URL%/index.css" rel="stylesheet" />
+    <script>
+      if (typeof globalThis === "undefined") {
+        var globalThis = Function("return this")();
+      }
+    </script>
     <link
       rel="preload"
       href="%PUBLIC_URL%/fonts/Inter-Black.ttf"
