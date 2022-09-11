@@ -48,14 +48,15 @@ function App() {
                 position: "relative",
                 display: "flex",
                 justifyContent: "center",
-                marginTop: "37px",
+                marginTop: "100px",
+                marginBottom: "20px",
               }}
             >
               <Box
                 className="logo"
                 sx={{
-                  width: tablet ? 348 : 200,
-                  height: tablet ? 259 : 150,
+                  width: tablet ? 373 : 223,
+                  height: tablet ? 156 : 90,
                   backgroundSize: "cover",
                 }}
               />
