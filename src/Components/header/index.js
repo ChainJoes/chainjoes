@@ -95,8 +95,8 @@ const Header = () => {
                 height: 66,
                 backgroundSize: "cover",
                 marginRight: "20px",
-                transition: "0.1s background-image",
-                WebkitTransition: '0.1s background-image',
+                // transition: "0.1s background-image",
+                // WebkitTransition: '0.1s background-image',
               }}
               onClick={handleMenu}
             ></Box>
