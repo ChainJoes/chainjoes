@@ -95,7 +95,7 @@ const Header = () => {
                 height: 66,
                 backgroundSize: "cover",
                 marginRight: "20px",
-                transition: "all 0.1s ease-in-out",
+                transition: "background-image 0.1s ease-in-out",
               }}
               onClick={handleMenu}
             ></Box>
