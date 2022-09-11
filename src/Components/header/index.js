@@ -58,6 +58,7 @@ const Header = () => {
   const handleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     document.getElementById("root").classList.toggle("mobileMenu");
+    document.documentElement.style.overflow = "hidden";
   };
 
   return (
@@ -117,6 +118,7 @@ const Header = () => {
                   flexDirection: "column",
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",
+                  overflow: "auto",
                 }}
               >
                 <Box
@@ -176,7 +178,7 @@ const Header = () => {
                 <Link
                   href="mailto:info@chainjoes.com"
                   underline="none"
-                  style={{ flexGrow: 1 }}
+                  style={{ flexGrow: 1, marginBottom: "80px" }}
                 >
                   <Box
                     sx={{
