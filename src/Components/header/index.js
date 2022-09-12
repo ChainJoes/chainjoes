@@ -50,7 +50,7 @@ const Header = () => {
     {
       title: "Discord",
       logo: DsLogo,
-      link: "https://discord.gg/Pqnnt8Ag",
+      link: "https://discord.com/invite/6XcvPDbXBa",
       iconWidth: 32,
     },
   ];

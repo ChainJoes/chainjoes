@@ -138,7 +138,7 @@ function App() {
               }}
             >
               <Link
-                href="https://discord.gg/Pqnnt8Ag"
+                href="https://discord.com/invite/6XcvPDbXBa"
                 target="_blank"
                 underline="none"
               >
