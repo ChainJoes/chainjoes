@@ -182,9 +182,9 @@ function App() {
                     style={{
                       fontFamily: "Inter",
                       fontStyle: "italic",
-                      fontSize: tablet ? "20px" : "16px",
+                      fontSize: tablet ? "20px" : "14px",
                       fontWeight: 500,
-                      paddingLeft: tablet ? "98px" : "64px",
+                      paddingLeft: tablet ? "98px" : "77px",
                       paddingTop: tablet ? "26px" : "20px",
                       textTransform: "uppercase",
                       color: "#000000",
