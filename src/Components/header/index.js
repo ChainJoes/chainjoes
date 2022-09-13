@@ -21,7 +21,7 @@ const Header = () => {
       title: "Facebook",
       logo: FbLogo,
       link: "https://facebook.com/ChainJoes",
-      iconWidth: 13,
+      iconWidth: 20,
     },
     {
       title: "Instagram",
