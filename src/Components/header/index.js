@@ -26,7 +26,7 @@ const Header = () => {
     {
       title: "Instagram",
       logo: InstLogo,
-      link: "https://www.instagram.com/chainjoes",
+      link: "https://www.instagram.com/chain_joes/",
       iconWidth: 26,
     },
     {
